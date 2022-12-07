@@ -3,10 +3,10 @@ $("#prodBtn").click(prodLogin);
 $("#sandBtn").click(sandLogin);
 
 var apiVersion = 'v37.0',
-    clientId = process.env.SALESFORCE_CLIENT_ID,
-    clientSecret = process.env.SALESFORCE_CLIENT_SECRET,
+    clientId = '3MVG9FMtW0XJDLd16RjTq6CPvecw28Vh0kS.DFi1XRMggLT9ftCSylqo6SslhCIkfczqXVNL_0w0c0GkgJtZk',
+    clientSecret = '7CE1CD08F5691B019ADD541F16218C48A030E96D61156DAFE80A6AD819D82FF9',
     loginUrl = 'https://login.salesforce.com/',
-    redirectURI = "/oauthcallback.html",
+    redirectURI = "https://test-lightining-out.herokuapp.com/oauthcallback.html",
     proxyURL = '/proxy/' ;
  
 
