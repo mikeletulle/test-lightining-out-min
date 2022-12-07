@@ -6,7 +6,7 @@ var apiVersion = 'v37.0',
     clientId = '3MVG9FMtW0XJDLd16RjTq6CPveSsO8ApRFC2AYv8JVUvON.CmRYSCr6D4XzOXyZydVfJHbXGbu_RpLHB86OIk',
     clientSecret = '0E779A911DE3350A4B023C09BA89124D6158DF0943D20A95212694C8AEA87B2E',
     loginUrl = 'https://login.salesforce.com/',
-    redirectURI = "https://test-lightining-out.herokuapp.com/oauthcallback.html",
+    redirectURI = window.location.origin + "/oauthcallback.html",
     proxyURL = '/proxy/' ;
  
 

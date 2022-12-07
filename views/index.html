@@ -4,6 +4,15 @@
     <title>Login to Salesforce </title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="icon"  type="image/icon"  href="Cloud Red.ico" />
+    <script type="text/javascript" src="lib/jquery.js"></script>
+    <script type="text/javascript" src="lib/jqueryCookies.js"></script> 	
+    <script type="text/javascript" src="js/OAuth.js"></script>
+    <script>  
+      if($.cookie("AccToken"))
+      { 
+        window.location.replace(window.location.origin + '/main');
+      }
+    </script>
   </head>
   <body class="container" style="padding-top: 50px;">
     <div class="jumbotron">
@@ -25,19 +34,5 @@
 
       <p><a id="prodBtn" role="button" style="margin-right:40px" class="btn btn-primary btn-lg">Production</a><a id="sandBtn" role="button" class="btn btn-primary btn-lg">Sandbox</a></p>
     </div>
-    <script type="text/javascript" src="lib/jquery.js"></script>
-    <script type="text/javascript" src="lib/jqueryCookies.js"></script> 	
-    <script type="text/javascript" src="js/OAuth.js"></script>
-    <script>  
-      if($.cookie("AccToken"))
-      { 
-        window.location.replace(window.location.origin + '/main');
-      }
-     //do not redirect for localhost
-//    if (window.location.protocol != "https:" && window.location.hostname != 'localhost'){
-//      window.location.href = "https:" + window.location.href.substring(window.location.protocol.length);
-//    }
-        
-      </script>
     </body>
 </html>
