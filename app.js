@@ -39,30 +39,30 @@ app.all('/proxy',  function(req, res, next) {
 });
  
 app.get('/' ,  function(req,res,next) {
-    res.sendfile('views/index.html');
+    res.render('views/index.html');
 } ); 
 
 app.get('/index*' ,  function(req,res,next) {
-    res.sendfile('views/index.html');
+    res.render('views/index.html');
 } );  
  
 app.get('/oauthcallback.html' ,  function(req,res,next) {
-    res.sendfile('views/oauthcallback.html');
+    res.render('views/oauthcallback.html');
 } ); 
 
 app.get('/Main*' ,   function(req,res,next) {
-    res.sendfile('views/Main.html');
+    res.render('views/Main.html');
 } );
  
 
 app.listen(app.get('port'), function () {
-    console.log('Express server listening on port ' + app.get('port'));
+    console.log('Server listening on port ' + app.get('port'));
 });
 
-	var options = {
+//	var options = {
 //      key: fs.readFileSync('./key.pem', 'utf8'),
 //      cert: fs.readFileSync('./server.crt', 'utf8')
-   };
+//   };
    
-	https.createServer(options, app).listen(PORT);
-	console.log("Server listening for HTTPS connections on port ", 8081);
+//	https.createServer(options, app).listen(PORT);
+//	console.log("Server listening for HTTPS connections on port ", 8081);
