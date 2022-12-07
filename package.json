@@ -2,8 +2,9 @@
   "name": "Salesfore_Lightnign_Out_Demo",
   "version": "0.0.1",
   "description": "Surface Lightning Component on Node.js Application",
-  "main": "Server.js",
+  "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,19 +16,21 @@
     "Lightnig Component",
 	"Lightnig Out",
     "API",
-    "Salesforce"
+    "Salesforce",
+    "heroku"
   ],
-  "author": "Jitendra Zaa",
+  "author": "Rodrigo Torres",
   "license": "MIT",
   "dependencies": {
+    "ejs": "^3.1.5",
     "logfmt": "~1.1.2",
-    "express": "~4.7.1",
+    "express": "~4.15.2",
     "http": "~0.0.0",
     "request": "~2.36.0",
     "body-parser": "~1.6.2",
 	"cors":"2.8.1"
   },
   "engines": {
-	    "node": "0.10.x"
+	    "node": "16.x"
 	  }
 }
