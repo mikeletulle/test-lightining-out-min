@@ -1,5 +1,5 @@
 {
-  "name": "Salesfore_Lightnign_Out_Demo",
+  "name": "Salesfore_Lightning_Out",
   "version": "0.0.1",
   "description": "Surface Lightning Component on Node.js Application",
   "main": "app.js",
@@ -14,7 +14,7 @@
   "keywords": [
     "Node.Js",
     "Lightnig Component",
-	"Lightnig Out",
+	  "Lightnig Out",
     "API",
     "Salesforce",
     "heroku"
@@ -28,7 +28,7 @@
     "http": "~0.0.0",
     "request": "~2.36.0",
     "body-parser": "~1.6.2",
-	"cors":"2.8.1"
+	  "cors":"2.8.1"
   },
   "engines": {
 	    "node": "16.x"

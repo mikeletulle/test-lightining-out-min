@@ -4,24 +4,43 @@ $("#prodBtn").click(prodLogin);
 $("#sandBtn").click(sandLogin);
 
 var apiVersion = 'v37.0',
+    loginUrl = 'https://login.salesforce.com/',
+    proxyURL = '/proxy/',
+    clientId = "",
+    clientSecret = "";
+    redirectURI = "";
+
+
+/** TESTING VALUES
     clientId = '3MVG9FMtW0XJDLd16RjTq6CPveSsO8ApRFC2AYv8JVUvON.CmRYSCr6D4XzOXyZydVfJHbXGbu_RpLHB86OIk',
     clientSecret = '0E779A911DE3350A4B023C09BA89124D6158DF0943D20A95212694C8AEA87B2E',
-    loginUrl = 'https://login.salesforce.com/',
     redirectURI = window.location.origin + "/oauthcallback.html",
-    proxyURL = '/proxy/' ;
- 
+*/ 
+function getConfigAndLogin(call){
+    $.get("/session", function(data, status){
+        console.dir(data);
+
+        clientId = data.clientId,
+        clientSecret = data/clientSecret;
+        redirectURI = data.callback;
+
+        if (typeof call === "function")
+            call();
+    });
+}
 
 function prodLogin()
 {
 	loginUrl = 'https://login.salesforce.com/'; 
-    login();
+    getConfigAndLogin(login);
 }
 
 function sandLogin()
 {
     loginUrl = 'https://test.salesforce.com/';
-    login();
+    getConfigAndLogin(login);
 }
+
 function login() {
     var url = loginUrl + 'services/oauth2/authorize?display=popup&response_type=token' +
         '&client_id=' + encodeURIComponent(clientId) +

@@ -59,6 +59,18 @@ app.listen(app.get('port'), function () {
     console.log('Server listening on port ' + app.get('port'));
 });
 
+app.get("/config", function(req,res){
+
+    var config = {
+        clientId: process.env.SALESFORCE_CLIENT_ID,
+        clientSecret: process.env.SALESFORCE_CLIENT_SECRET,
+        callback: process.env.SALESFORCE_REDIRECT_URL
+    }
+
+    res.setHeader('Content-Type', 'application/json');
+    res.send( config );
+});
+
 //	var options = {
 //      key: fs.readFileSync('./key.pem', 'utf8'),
 //      cert: fs.readFileSync('./server.crt', 'utf8')
