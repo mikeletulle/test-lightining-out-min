@@ -39,7 +39,7 @@ function oauthCallback(response) {
 		strngBrks = response.id.split('/');
 		$.cookie("LoggeduserId",  strngBrks[strngBrks.length - 1]) ;
 		
-        window.location = 'Main';
+        window.location = 'main';
     } else {
         alert("AuthenticationError: No Token");
     }

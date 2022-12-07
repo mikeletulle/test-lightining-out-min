@@ -51,7 +51,7 @@ app.get('/oauthcallback.html' ,  function(req,res,next) {
 } ); 
 
 app.get('/main*' ,   function(req,res,next) {
-    res.sendFile('views/main.html', { root: __dirname });
+    res.sendFile('views/lo.html', { root: __dirname });
 } );
  
 
