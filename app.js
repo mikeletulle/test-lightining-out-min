@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 5000
 var logFmt = require("logfmt");
 
 app.use(express.static(__dirname + '/client')); 
-
+app.set('views', path.join(__dirname, 'views'));
 app.use(bodyParser.json());  
 
 app.set('port', process.env.PORT || 8080);
@@ -39,19 +39,19 @@ app.all('/proxy',  function(req, res, next) {
 });
  
 app.get('/' ,  function(req,res,next) {
-    res.render('views/index.html');
+    res.render('views/index');
 } ); 
 
 app.get('/index*' ,  function(req,res,next) {
-    res.render('views/index.html');
+    res.render('views/index');
 } );  
  
 app.get('/oauthcallback.html' ,  function(req,res,next) {
-    res.render('views/oauthcallback.html');
+    res.render('views/oauthcallback');
 } ); 
 
 app.get('/Main*' ,   function(req,res,next) {
-    res.render('views/Main.html');
+    res.render('views/main');
 } );
  
 
