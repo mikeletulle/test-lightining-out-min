@@ -48,6 +48,7 @@ function oauthCallback(response) {
 
 function popupCenter(url, title, w, h) {
     // Handles dual monitor setups
+    console.log("Redirecting to: " + url);
     var parentLeft = window.screenLeft ? window.screenLeft : window.screenX;
     var parentTop = window.screenTop ? window.screenTop : window.screenY;
     var left = parentLeft + (window.innerWidth / 2) - (w / 2);
