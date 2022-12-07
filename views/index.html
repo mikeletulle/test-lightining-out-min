@@ -29,14 +29,14 @@
     <script type="text/javascript" src="lib/jqueryCookies.js"></script> 	
     <script type="text/javascript" src="js/OAuth.js"></script>
     <script>  
-      if(!$.cookie("AccToken"))
+      if($.cookie("AccToken"))
       { 
         window.location.replace(window.location.origin + '/main');
       }
      //do not redirect for localhost
-    if (window.location.protocol != "https:" && window.location.hostname != 'localhost'){
-      window.location.href = "https:" + window.location.href.substring(window.location.protocol.length);
-    }
+//    if (window.location.protocol != "https:" && window.location.hostname != 'localhost'){
+//      window.location.href = "https:" + window.location.href.substring(window.location.protocol.length);
+//    }
         
       </script>
     </body>
