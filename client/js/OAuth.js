@@ -3,7 +3,8 @@ $("#prodBtn").click(prodLogin);
 $("#sandBtn").click(sandLogin);
 
 var apiVersion = 'v37.0',
-    clientId = 'YOUR CONSUMER KEY',
+    clientId = process.env.SALESFORCE_CLIENT_ID,
+    clientSecret = process.env.SALESFORCE_CLIENT_SECRET,
     loginUrl = 'https://login.salesforce.com/',
     redirectURI = "/oauthcallback.html",
     proxyURL = '/proxy/' ;
@@ -22,7 +23,7 @@ function sandLogin()
 }
 function login() {
     var url = loginUrl + 'services/oauth2/authorize?display=popup&response_type=token' +
-//        '&client_id=' + encodeURIComponent(clientId) +
+        '&client_id=' + encodeURIComponent(clientId) +
         '&redirect_uri=' + encodeURIComponent(redirectURI);
     popupCenter(url, 'login', 700, 600);
 }
