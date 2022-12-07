@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 5000
 var logFmt = require("logfmt");
 
 app.use(express.static(__dirname + '/client')); 
-app.set('views', path.join(__dirname, 'views'));
+//app.set('views', path.join(__dirname, 'views'));
 app.use(bodyParser.json());  
 
 app.set('port', process.env.PORT || 8080);
