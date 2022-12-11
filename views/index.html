@@ -8,10 +8,14 @@
     <script defer type="text/javascript" src="lib/jqueryCookies.js"></script> 	
     <script defer type="text/javascript" src="js/OAuth.js"></script>
     <script>  
-      if($.cookie("AccToken"))
-      { 
-        window.location.replace(window.location.origin + '/main');
-      }
+      $( document ).ready(function() {
+        console.log( "doc ready!" );
+          if($.cookie("AccToken"))
+        { 
+          window.location.replace(window.location.origin + '/main');
+        }
+    });
+      
     </script>
   </head>
   <body class="container" style="padding-top: 50px;">
