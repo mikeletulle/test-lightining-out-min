@@ -47,7 +47,7 @@ if(!$.cookie("AccToken"))
 { 
     alert("Login to Salesforce First!!!");
 }else{
-	createChatterFeed('NEWS');
+	createLOComponent('NEWS');
 }
 
 
@@ -76,7 +76,7 @@ function setupLightning(callback) {
 	}
 }
 
-function createChatterFeed(type, subjectId) {
+function createLOComponent(type, subjectId) {
     setupLightning(function() {
 		$Lightning.createComponent("c:ExampleLightningOutFlow", {type: type, subjectId: subjectId}, "lexcontainer"); 
     });
