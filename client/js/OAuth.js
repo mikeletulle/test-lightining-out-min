@@ -1,4 +1,4 @@
-<script type="text/javascript" src="lib/jquery.js"></script>
+
 
 $("#prodBtn").click(prodLogin);
 $("#sandBtn").click(sandLogin);
