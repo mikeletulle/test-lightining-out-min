@@ -1,7 +1,8 @@
 
-
-$("#prodBtn").click(prodLogin);
-$("#sandBtn").click(sandLogin);
+function activateButtons(){
+    $("#prodBtn").click(prodLogin);
+    $("#sandBtn").click(sandLogin);
+}
 
 var apiVersion = 'v37.0',
     loginUrl = 'https://login.salesforce.com/',
@@ -9,7 +10,6 @@ var apiVersion = 'v37.0',
     clientId = "",
     clientSecret = "";
     redirectURI = "";
-
 
 /** TESTING VALUES
     clientId = '3MVG9FMtW0XJDLd16RjTq6CPveSsO8ApRFC2AYv8JVUvON.CmRYSCr6D4XzOXyZydVfJHbXGbu_RpLHB86OIk',

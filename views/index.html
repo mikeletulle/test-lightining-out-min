@@ -10,12 +10,11 @@
     <script>  
       $( document ).ready(function() {
         console.log( "doc ready!" );
-          if($.cookie("AccToken"))
-        { 
+        if($.cookie("AccToken"))
           window.location.replace(window.location.origin + '/main');
-        }
-    });
-      
+        else
+          activateButtons();
+      });
     </script>
   </head>
   <body class="container" style="padding-top: 50px;">
