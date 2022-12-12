@@ -9,6 +9,11 @@
     <script defer type="text/javascript" src="js/OAuth.js"></script>
     <script>  
       $( document ).ready(function() {
+        $.removeCookie("AccToken");
+        $.removeCookie("APIVer");
+        $.removeCookie("InstURL");
+        $.removeCookie("idURL");
+        $.removeCookie("LoggeduserId");
         console.log( "Removing Cookies" );
         window.location.replace(window.location.origin + '/index');
       });
