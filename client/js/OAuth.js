@@ -77,9 +77,9 @@ function popupCenter(url, title, w, h) {
 }
 
 function removeCookies(){
-    $.cookie("AccToken", null, { path: '/' });
-    $.cookie("APIVer", null, { path: '/' });
-    $.cookie("InstURL", null, { path: '/' });
-    $.cookie("idURL", null, { path: '/' });
-    $.cookie("LoggeduserId", null, { path: '/' });
+    $.removeCookie("AccToken");
+    $.removeCookie("APIVer");
+    $.removeCookie("InstURL");
+    $.removeCookie("idURL");
+    $.removeCookie("LoggeduserId");
 }

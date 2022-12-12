@@ -24,8 +24,8 @@
             <span class="icon-bar">
             </span>
           </button>
-          <a href="http://salesforce.com" class="navbar-brand">
-           <span class="glyphicon glyphicon-cloud" style="vertical-align : middle" ></span> Salesforce Lightning Out Demo
+          <a href="/logout" class="navbar-brand">
+           <span class="glyphicon glyphicon-cloud" style="vertical-align : middle" ></span> Logout
           </a>
         </div> 
        
@@ -45,12 +45,20 @@
 var _lightningReady = false;
 if(!$.cookie("AccToken"))
 { 
+    removeCookies();
     alert("You need to Login to Salesforce First!!!");
-    window.location.replace(window.location.origin + '/main');
+    window.location.replace(window.location.origin + '/index');
 }else{
-	createLOComponent('NEWS');
+	createLOComponent('Lightning Out');
 }
 
+function removeCookies(){
+  $.removeCookie("AccToken");
+  $.removeCookie("APIVer");
+  $.removeCookie("InstURL");
+  $.removeCookie("idURL");
+  $.removeCookie("LoggeduserId");
+}
 
 
 function setupLightning(callback) {
@@ -68,6 +76,7 @@ function setupLightning(callback) {
     try{
 	    $Lightning.use(appName, 
 	        function() {
+            console.log('Creating Component!');
 				_lightningReady = true;
 				document.getElementById("lexcontainer").style.display = "";
 				if (typeof callback === "function") {
@@ -75,6 +84,7 @@ function setupLightning(callback) {
 				}
 	        }, url, $.cookie("AccToken"));
     }catch(e){
+      console.error('Failed to load component! -- ' + e);
       removeCookies();
       window.location.replace(window.location.origin + '/main');
     }
