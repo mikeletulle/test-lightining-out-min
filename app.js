@@ -53,10 +53,9 @@ app.get('/oauthcallback.html' ,  function(req,res,next) {
 app.get('/main*' ,   function(req,res,next) {
     res.sendFile('views/lo.html', { root: __dirname });
 } );
- 
 
-app.listen(app.get('port'), function () {
-    console.log('Server listening on port ' + app.get('port'));
+app.get('/logout', function(req,res,next){
+    res.sendFile('views/logout.html', { root: __dirname });
 });
 
 app.get("/config", function(req,res){
@@ -69,6 +68,10 @@ app.get("/config", function(req,res){
 
     res.setHeader('Content-Type', 'application/json');
     res.send( config );
+});
+
+app.listen(app.get('port'), function () {
+    console.log('Server listening on port ' + app.get('port'));
 });
 
 //	var options = {

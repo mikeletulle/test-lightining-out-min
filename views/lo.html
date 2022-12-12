@@ -24,10 +24,13 @@
             <span class="icon-bar">
             </span>
           </button>
-          <a href="/logout" class="navbar-brand">
-           <span class="glyphicon glyphicon-cloud" style="vertical-align : middle" ></span> Logout
+          <a href="http://salesforce.com" class="navbar-brand">
+           <span class="glyphicon glyphicon-cloud" style="vertical-align : middle" ></span> Salesforce Lightning Out Demo
           </a>
-        </div> 
+          <a href="/logout" class="navbar-brand">
+            <span class="glyphicon glyphicon-cloud" style="vertical-align : middle" ></span> Logout
+           </a>
+         </div> 
        
       </div>
     </nav> 
@@ -45,9 +48,9 @@
 var _lightningReady = false;
 if(!$.cookie("AccToken"))
 { 
-    removeCookies();
-    alert("You need to Login to Salesforce First!!!");
-    window.location.replace(window.location.origin + '/index');
+  removeCookies();
+  //alert("You need to Login to Salesforce First!!!");
+  window.location.replace(window.location.origin + '/index');
 }else{
 	createLOComponent('Lightning Out');
 }
