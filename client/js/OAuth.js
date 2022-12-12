@@ -17,7 +17,7 @@ var apiVersion = 'v37.0',
     redirectURI = window.location.origin + "/oauthcallback.html",
 */ 
 function getConfigAndLogin(call){
-    $.get("/session", function(data, status){
+    $.get("/config", function(data, status){
         console.dir(data);
 
         clientId = data.clientId,
