@@ -22,7 +22,7 @@ function getConfigAndLogin(call){
 
         clientId = data.clientId,
         clientSecret = data/clientSecret;
-        redirectURI = data.callback;
+        redirectURI = window.location.origin + data.callback;
 
         if (typeof call === "function")
             call();
