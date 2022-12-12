@@ -9,19 +9,23 @@
     <script defer type="text/javascript" src="js/OAuth.js"></script>
     <script>  
       $( document ).ready(function() {
-        $.removeCookie("AccToken");
-        $.removeCookie("APIVer");
-        $.removeCookie("InstURL");
-        $.removeCookie("idURL");
-        $.removeCookie("LoggeduserId");
-        console.log( "Removing Cookies" );
-        window.location.replace(window.location.origin + '/index');
+        $.get($.cookie("InstURL") + "/services/oauth2/revoke?token=" + encodeURIComponent($.cookie("AccToken")))
+          .done(function(data){
+            console.log("Logged out from salesforce successfully!!");
+            $.removeCookie("AccToken");
+            $.removeCookie("APIVer");
+            $.removeCookie("InstURL");
+            $.removeCookie("idURL");
+            $.removeCookie("LoggeduserId");
+            console.log( "Cookies Removed!!!" );
+            window.location.replace(window.location.origin + '/index');
+          });
       });
     </script>
   </head>
   <body class="container" style="padding-top: 50px;">
     <div class="jumbotron">
-      <h1>Logout from Salesforce</h1>
+      <h1>Logging out from Salesforce</h1>
     </div>
     </body>
 </html>
