@@ -75,3 +75,11 @@ function popupCenter(url, title, w, h) {
     var top = parentTop + (window.innerHeight / 2) - (h / 2);
     return window.open(url, title, 'width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
 }
+
+function removeCookies(){
+    $.cookie("AccToken", null, { path: '/' });
+    $.cookie("APIVer", null, { path: '/' });
+    $.cookie("InstURL", null, { path: '/' });
+    $.cookie("idURL", null, { path: '/' });
+    $.cookie("LoggeduserId", null, { path: '/' });
+}
