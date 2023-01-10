@@ -31,7 +31,8 @@ function getConfigAndLogin(call){
 
 function prodLogin()
 {
-	loginUrl = 'https://login.salesforce.com/'; 
+	//loginUrl = 'https://login.salesforce.com/'; 
+    loginUrl = 'https://sdodemo-main-166ce2cf6b6-172-180fc177bb0.force.com/LightningOutExample/login';
     getConfigAndLogin(login);
 }
 
