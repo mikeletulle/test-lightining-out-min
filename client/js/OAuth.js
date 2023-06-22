@@ -10,6 +10,9 @@ var apiVersion = 'v37.0',
     clientId = "",
     clientSecret = "";
     redirectURI = "";
+    appName="";
+    componentName="";
+
 
 /** TESTING VALUES
     clientId = '3MVG9FMtW0XJDLd16RjTq6CPveSsO8ApRFC2AYv8JVUvON.CmRYSCr6D4XzOXyZydVfJHbXGbu_RpLHB86OIk',
@@ -23,6 +26,11 @@ function getConfigAndLogin(call){
         clientId = data.clientId,
         clientSecret = data/clientSecret;
         redirectURI = window.location.origin + data.callback;
+        loginUrl = data.loginUrl;
+        appName = data.appName;
+        componentName = data.componentName;
+        $.cookie("appName",appName ) ;
+        $.cookie("componentName", componentName) ;
 
         if (typeof call === "function")
             call();
@@ -31,8 +39,9 @@ function getConfigAndLogin(call){
 
 function prodLogin()
 {
-	//loginUrl = 'https://login.salesforce.com/'; 
-    loginUrl = 'https://sdodemo-main-166ce2cf6b6-172-180fc177bb0.force.com/LightningOutExample/login';
+	loginUrl = 'https://login.salesforce.com/'; 
+    //loginUrl = 'https://sdodemo-main-166ce2cf6b6-172-180fc177bb0.force.com/LightningOutExample/login';
+    loginUrl = loginUrl;
     getConfigAndLogin(login);
 }
 
