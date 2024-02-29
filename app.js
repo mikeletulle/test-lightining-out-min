@@ -63,7 +63,10 @@ app.get("/config", function(req,res){
     var config = {
         clientId: process.env.SALESFORCE_CLIENT_ID,
         clientSecret: process.env.SALESFORCE_CLIENT_SECRET,
-        callback: process.env.SALESFORCE_REDIRECT_URL
+        callback: process.env.SALESFORCE_REDIRECT_URL,
+        loginUrl: process.env.SALESFORCE_LOGIN_URL,
+        appName: process.env.SALESFORCE_APPNAME,
+        componentName: process.env.SALESFORCE_COMPONENT
     }
 
     res.setHeader('Content-Type', 'application/json');

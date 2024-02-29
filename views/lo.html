@@ -63,7 +63,7 @@ function removeCookies(){
 
 
 function setupLightning(callback) {
-	var appName = "c:ExampleLightningOutDependencyApp";
+	//var appName = "c:ExampleLightningOutDependencyApp";
 	 
 
 	if (_lightningReady) {
@@ -75,7 +75,7 @@ function setupLightning(callback) {
 	    var url = $.cookie("InstURL");
 		url = url.replace("my.salesforce", "lightning.force");
     try{
-	    $Lightning.use(appName, 
+	    $Lightning.use( $.cookie("appName"), 
 	        function() {
             console.log('Creating Component!');
 				_lightningReady = true;
@@ -94,8 +94,9 @@ function setupLightning(callback) {
 
 function createLOComponent(type, subjectId) {
     setupLightning(function() {
-		$Lightning.createComponent("c:ExampleLightningOutFlow", {type: type, subjectId: subjectId}, "lexcontainer"); 
-    });
+		//$Lightning.createComponent("c:ExampleLightningOutFlow", {type: type, subjectId: subjectId}, "lexcontainer"); 
+    $Lightning.createComponent($.cookie("componentName"), {type: type, subjectId: subjectId}, "lexcontainer");
+  });
 }
 
 </script>
